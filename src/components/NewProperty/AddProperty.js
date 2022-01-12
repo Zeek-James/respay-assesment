@@ -9,7 +9,6 @@ export const AddProperty = () => {
     state: "",
     city: "",
     address: "",
-    propertyName: "",
     propertyType: "",
     buildingType: "",
     Amenities: "",
@@ -24,7 +23,7 @@ export const AddProperty = () => {
       </Button>
       <Typography color="secondary">Add New Property</Typography>
       <Box sx={{ px: 4 }}>
-        <form>
+        <form onSubmit={onSubmit}>
           <TextField
             label="Property Name"
             variant="outlined"
@@ -32,6 +31,8 @@ export const AddProperty = () => {
             type="text"
             sx={{ my: 2 }}
             size="small"
+            // value={ }
+            onChange={(e) => setProperties({ ...properties })}
           />
           <TextField
             label="Property Description"

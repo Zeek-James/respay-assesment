@@ -21,7 +21,7 @@ export const NewPropertyForm = () => {
       return (
         <AddProperty
           nextStep={nextStep}
-          //   handleOnChange={handleOnChange}
+            handleOnChange={handleOnChange}
         />
       );
     case 2:
@@ -29,7 +29,7 @@ export const NewPropertyForm = () => {
         <PropertyImages
           prevStep={prevStep}
           nextStep={nextStep}
-          //   handleOnChange={handleOnChange}
+            handleOnChange={handleOnChange}
         />
       );
     case 3:
