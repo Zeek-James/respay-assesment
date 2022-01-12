@@ -6,6 +6,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  CircularProgress,
   Fade,
   Grid,
   Modal,
@@ -32,7 +33,7 @@ const style = {
 };
 
 const Properties = () => {
-  const properties = useSelector((state) => state.properties);
+  const { properties, isloading } = useSelector((state) => state.properties);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -42,7 +43,16 @@ const Properties = () => {
     localStorage.setItem("prop", JSON.stringify(prop));
   };
 
-  return (
+  return isloading ? (
+    <div>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isloading}
+      >
+        <CircularProgress color="secondary" />
+      </Backdrop>
+    </div>
+  ) : (
     <Box sx={{ width: "100%" }}>
       <Box
         sx={{
