@@ -1,0 +1,4 @@
+const LOGIN = "LOGIN";
+const GET_PROPERTIES = "GET_PROPERTIES";
+
+export { LOGIN, GET_PROPERTIES };
